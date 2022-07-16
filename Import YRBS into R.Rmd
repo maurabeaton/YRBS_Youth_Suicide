@@ -1,0 +1,53 @@
+---
+title: "Import YRBS to R"
+author: "Maura Beaton"
+date: '2022-07-16'
+---
+
+This file outlines the steps to import data from the Youth Risky Behaviors Survey (YRBS) into R. 
+
+### Step 1
+
+Download and install the `devtools` package, which will allow you to download additional packages from github.
+
+```{r devtools, eval = FALSE}
+# Install the devtools package
+install.packages( "devtools" , repos = "http://cran.rstudio.com/" )
+```
+
+### Step 2
+
+With the `devtools` package installed, you can now download and install the `lodown` package from github. 
+
+```{r lodown, eval = FALSE}
+# Install the lodown package
+library(devtools)
+install_github( "ajdamico/lodown" , dependencies = TRUE )
+```
+
+The `lodown` package is designed to download an import all YRBS data and microdata from the CDC website into R. 
+
+### Step 3
+
+With the `lodown` package installed, you are now able to download the YRBS dataset directly onto your computer. 
+
+```{r download, eval = FALSE}
+# Download the YRBS high school data from the CDC website
+library(lodown)
+lodown( "yrbss" , output_dir = file.path( path.expand( "~" ) , "YRBSS" ) )
+```
+
+### Step 4
+
+With the files downloaded, you can import the compiled dataset, saved as *"2019 main.rds"*, into R. This compiled dataset includes YRBS data from all 50 US states and all years the survey was conducted.
+
+```{r import, eval = FALSE}
+# Import compiled YRBS dataset
+yrbs_all <- readRDS( file.path( path.expand( "~" ) , "YRBSS" , "2019 main.rds" ) )
+
+# Create a dataframe and tibble
+yrbs_df <- data.frame(yrbss_all)
+yrbs_df <- tibble(yrbss_df)
+```
+
+Following these steps, you should now have all YRBS data available as a data frame and tibble in your environment. If you've encountered any issues along the way, additional guidance is available here: <http://asdfree.com/youth-risk-behavior-surveillance-system-yrbss.html>
