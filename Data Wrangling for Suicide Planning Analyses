@@ -1,0 +1,50 @@
+## YRBS Data Wrangling for Suicide Planning Analyses
+
+This document provides details about the data wrangling processess that were performed to prepare YRBS data for analyses on suicide planning. Information about variables included and steps taken to assess and deal with data structure, missing data, data labels are all outlined. 
+
+***Variables Included***
+
+The following variables were selected for inclusion in these analyses:
+
+* year - Year data was collected
+* age - Age of participant
+* sex - Biological sex of participant
+* sexid2 - Sexual orientation 
+* grade - Partipant's grade at time of data collection
+* race4 - Participant's race
+* race7 - Participant's race and ethnicity
+* q26 - Experienced suicidal ideation in past year
+* q27 - Developed a suicide plan in past year
+* q28 - Number of suicide attempts made in past year
+* q29 - Made attempt requiring medical attention in past year
+
+*** Duplicates ***
+
+The `duplicate()` function was run to check for duplicates and none were found.
+
+*** Missingness ***
+
+A visualization of missingness was created for the suicide variables (ideation, plan, attempts and attempt requiring medical attention). This revealed that 13% of participants had missing data on suicide attempts and 15% had missing data. Because this is a high level of missingness, especially for outcome variables, simply removing missing rows could potentially introduce bias into the dataset. Therefore, a multiple imputation was run using the `mice` package. 
+
+To do run the multiple imputation, all variables needed to made explicitly numeric or factor, therefore all variables in the `var` dataset were changed to factor variables.
+
+When the mice() function was run, the method used to impute each variables was dependent on how many factor levels were contained within the variable. All factors with only 2 levels were imputed using the logistic regression method and all factors with 3 or more levels were imputed using the polynomial regression method. 
+
+*** Data Labels ***
+
+Data labels were created based the YRBS variable documentation:
+<https://www.cdc.gov/healthyyouth/data/yrbs/pdf/2019/2019_YRBS_SADC_Documentation.pdf>
+
+The suicide attempt variable was collapsed from 5 levels down to 3. The collapsed levels were as follows:
+
+* No attempts
+* Single attempt
+* Multiple attempts
+
+*** Other changes ***
+
+The age variable was re-classified as a numeric variable and mutated to represent the actual age of the participant.
+
+
+
+
