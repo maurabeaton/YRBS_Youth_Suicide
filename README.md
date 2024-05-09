@@ -33,9 +33,10 @@ Variables used in the analysis are:
 * q14 - Carried a gun (in past 30 days)
 * q17 - Got in a physical fight (in past 30 days)
 * q26 - Suicide ideation (in past 12 months)
-* q27 - Suicide plan (in past 12 months)
 * q28 - Number of suicide attempts (in past 12 months)
 * q29 - Suicide attempt that required medical attention (in past 12 months)
 * q56 - Injected illegal drug (in lifetime)
 
 Documentation on these variables is available here: <https://www.cdc.gov/healthyyouth/data/yrbs/pdf/2019/2019_YRBS_SADC_Documentation.pdf>
+
+Since data for many of these variables was only collected starting in 2018. Data used in this analysis was restricted to the years 2018-2019
