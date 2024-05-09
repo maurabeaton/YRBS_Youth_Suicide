@@ -33,6 +33,7 @@ Variables used in the analysis are:
 * q14 - Carried a gun (in past 30 days)
 * q17 - Got in a physical fight (in past 30 days)
 * q26 - Suicide ideation (in past 12 months)
+* q27 - Suicide plan (in past 12 months)
 * q28 - Number of suicide attempts (in past 12 months)
 * q29 - Suicide attempt that required medical attention (in past 12 months)
 * q56 - Injected illegal drug (in lifetime)
