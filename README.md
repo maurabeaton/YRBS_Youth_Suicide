@@ -13,7 +13,7 @@ install_github( "ajdamico/lodown" , dependencies = TRUE )
 library(lodown)
 lodown( "yrbss" , output_dir = file.path( path.expand( "~" ) , "YRBSS" ) )
 ```
-The code below outlines how to import the downloaded datafiles into R. The dataset used in this analysis was a compiled dataset that inlcudes YRBS data from all 50 US states and all years the survey was conducted (up until 2019). When downloaded using `lodown` this dataset is saved as saved as "2019 main.rds".
+Once downloaded, the files can be imported into R as RDS files using the code below. The dataset used in this analysis was a compiled dataset that inlcudes YRBS data from all 50 US states and all years the survey was conducted (up until 2019). When downloaded using `lodown` this dataset is saved as saved as "2019 main.rds".
 
 ```
 # Import compiled YRBS dataset
