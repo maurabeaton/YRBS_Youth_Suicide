@@ -1,8 +1,7 @@
 # YRBS Youth Suicide Data
-This repository includes analysis code run on CDC Youth Risky Behavior Survey (YRBS) data to explore suicide risk factors among US adolescents
+This repository includes code used to characterize risky behaviors amoung adolescents with a history of suicide ideation and attempts. 
 
-YRBS Data & Documentation for middle school and high school samples is available from https://www.cdc.gov/healthyyouth/data/yrbs/index.htm
-
+This analysis was conducted using the CDC Youth Risky Behavior Survey (YRBS). YRBS Data & Documentation for middle school and high school samples is available from https://www.cdc.gov/healthyyouth/data/yrbs/index.htm
 
 The code below outlines how to download the YRBS datasets from R using the `lodown` package:
 ```
