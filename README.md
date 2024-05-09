@@ -28,21 +28,13 @@ If you've encountered any issues along the way, additional guidance is available
 # Variables 
 
 Variables used in the analysis are:
-* year - Year data was collected
 * age - Age of participants
 * sex - Biological sex of participants
-* sexid2 - Sexual identity (collapsed variable)
-* q14 - Carried a gun
-* q17 - Got in a physical fight
-* q23 - Bullied at school
-* q24 - Cyber bullied
-* q25 - Felt sad or hopeless
-* q26 - Suicide ideation
-* q27 - Suicide plan
-* q28 - Number of suicide attempts
-* q29 - Suicide attempt that required medical attention
-* q42 - Binge Drinking
-* q56 - Injected illegal drug
-* q60 - Number of sex partners
+* q14 - Carried a gun (in past 30 days)
+* q17 - Got in a physical fight (in past 30 days)
+* q26 - Suicide ideation (in past 12 months)
+* q28 - Number of suicide attempts (in past 12 months)
+* q29 - Suicide attempt that required medical attention (in past 12 months)
+* q56 - Injected illegal drug (in lifetime)
 
 Documentation on these variables is available here: <https://www.cdc.gov/healthyyouth/data/yrbs/pdf/2019/2019_YRBS_SADC_Documentation.pdf>
