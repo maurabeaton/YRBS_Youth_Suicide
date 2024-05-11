@@ -1,5 +1,16 @@
 # Code used to conduct analyses, generate plots and tables
 
+# Load libraries
+library(tidyverse)
+library(dplyr)
+library(tidyr)
+library(forcats)
+library(ggplot2)
+library(RColorBrewer)
+library(crosstable)
+library(flextable)
+library(ggpubr)
+
 ## DEMOGRAPHICS ##
 
 # Plot age and gender
