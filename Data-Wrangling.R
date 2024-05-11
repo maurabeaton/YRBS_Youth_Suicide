@@ -1,5 +1,11 @@
 # Code used to evaluate data quality and prepare data for analysis
 
+# Load general use libraries
+library(tidyverse)
+library(dplyr)
+library(tidyr)
+# Libraries for specific functions are outlined prior to relevant code
+
 # Import data
 yrbss_2019 <- readRDS( file.path( path.expand( "~" ) , "YRBSS" , "2019 main.rds" ) )
 yrbss_df <- data.frame(yrbss_2019)
@@ -22,6 +28,7 @@ yrbss_VoI <- yrbss_df %>%
          needle = q56)
 
 # Visualize missing values
+library(visdat)
 yrbss_VoI %>% 
   arrange(attempt.med) %>%
   vis_miss()
@@ -30,6 +37,7 @@ yrbss_VoI %>%
 # mice requires that all variables be explicitly defined as either numerical or categorical (all YRBS data is categorical)
 
 # Classify variables as categorical 
+library(mice)
 yrbss_VoI_input <- yrbss_VoI %>%
   mutate(age = as.factor(age),
          sex = as.factor(sex),
@@ -69,6 +77,7 @@ yrbss_clean = expss::apply_labels(yrbss_final,
                                   attempt.med = "Attempt requiring medical attention")
 
 # Collapse factors
+library(forcats)
 yrbss_clean$attempt <- fct_collapse(yrbss_clean$attempt, 
                                     None = "1",
                                     Once = "2",
